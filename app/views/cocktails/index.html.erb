@@ -1,13 +1,25 @@
-<h1>Here are all the cocktails</h1>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail.id)  %>
-    </li>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/237814/screenshots/4877477/img_2259_2.jpg);">
+  <div class="container">
+    <h1><strong>Fancy Cocktails</strong></h1>
+    <p>You can create your own cocktail</p>
+    <a class="btn btn-flat" href="#">Create</a>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-concent-center">
+    <h1>Fancy Cocktails!</h1>
+  </div>
 
 
-  <% end %>
-</ul>
-
-<%= link_to 'New Cocktail', new_cocktail_path %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <h3><%= link_to("#{cocktail.name}", cocktail_path(cocktail.id)) %></h3>
+      </div>
+    <% end %>
+  </div>
+<%= link_to "Create a new Cocktail", new_cocktail_path %>
+</div>

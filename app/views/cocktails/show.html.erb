@@ -3,4 +3,11 @@
 <p>
   <strong>Name:</strong>
   <%= @cocktail.name %>
+
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description%> <%= dose.ingredient.name %>
+<% end %>
+<br>
+<%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail) %>
 </p>
+<%= link_to "Homepage", cocktails_path, class: "btn btn-primary" %>
