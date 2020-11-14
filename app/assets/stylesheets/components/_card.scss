@@ -2,7 +2,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  border-radius: 5px;
+  border-shadow: 3px;
 }
+
+.card {
+  border-radius: 5px;
+}
+
+.row{
+  margin-left: 245px;
+}
+
 card-category {
   background-size: cover;
   background-position: center;

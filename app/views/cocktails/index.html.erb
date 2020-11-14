@@ -1,25 +1,49 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/237814/screenshots/4877477/img_2259_2.jpg);">
-  <div class="container">
-    <h1><strong>Fancy Cocktails</strong></h1>
-    <p>You can create your own cocktail</p>
-    <a class="btn btn-flat" href="#">Create</a>
-  </div>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://cdn.dribbble.com/users/532338/screenshots/7010895/media/5c0a193436d9ef5e7695eb95c2e799fa.png" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Drinking buddies</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.dribbble.com/users/924425/screenshots/4565773/bar.jpg" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">My menu</a>
+          <a class="dropdown-item" href="#">Favs</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="container">
   <div class="row justify-concent-center">
-    <h1>Fancy Cocktails!</h1>
+    <h1>Some of our favourites!</h1>
   </div>
-
 
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h3><%= link_to("#{cocktail.name}", cocktail_path(cocktail.id)) %></h3>
+      <div div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://cdn.dribbble.com/users/532338/screenshots/7010895/media/5c0a193436d9ef5e7695eb95c2e799fa.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Click here to discover more.</p>
+
+        </div>
+        <h3 id="cocktail-name"><%= link_to("#{cocktail.name}", cocktail_path(cocktail.id)) %></h3>
+        <p id="delete"><%= link_to 'Delete cocktail', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
     <% end %>
+    <%= link_to "Create a new Cocktail", new_cocktail_path %>
   </div>
-<%= link_to "Create a new Cocktail", new_cocktail_path %>
 </div>
